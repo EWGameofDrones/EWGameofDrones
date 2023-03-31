@@ -1,0 +1,7 @@
+Id,Type,Orientation,XPos,YPos
+4,Lidar,North,10,24
+8,RFID,North,3,24
+7,RFID,North,15,24
+1,Ultrasonic,North,9,12
+2,Ultrasonic,North,3,16
+3,Ultrasonic,North,3,12
