@@ -89,10 +89,11 @@ void setup() {
 
   Serial.begin(9600);
 
-  //laserSetUp(); //look at laserButton.cpp for setup
+  laserSetUp(); //look at laserButton.cpp for setup
   stepperSetUp(); //look at joystick.cpp for setup
+  reloadSetUp(); //look at reload.cpp for setup
+
   //setupTest();
-  reloadSetUp();
 
 }
 
@@ -100,23 +101,22 @@ void setup() {
 // will only call functions from other files and loop them continuously
 void loop() {
 
-  //testLaserButton();
+
   laserButton(); //laserButton.cpp
-  joystickDirection();
-  //moveOneRotation();
-  //moreTest();
 
   //this will loop and run the stepper motors based on joystick position
-  //doEverything();
-
-    //this will loop and run the stepper motors based on joystick position
   moveStepper1();
   moveStepper2();
   stepper1.runSpeed(); // Move the X-axis motor at the specified speed (if any)
   stepper2.runSpeed(); // Move th
 
-  reloadStepper();
-  
+  reloadStepper(); //reload.cpp
+
+  //random testing functions
+  //testLaserButton();
+  //moveOneRotation();
+  //moreTest();
+  //testJoystick();
  
 }
 
