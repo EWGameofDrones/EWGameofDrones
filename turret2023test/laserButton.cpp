@@ -9,8 +9,8 @@
 #include <Arduino.h>
 #include "function.h"
 
-const int laserButtonPin = 6;
-const int laserPin = 5;
+const int laserButtonPin = 12;
+const int laserPin = 6;
 
 int buttonState = 0;
 int laserPrev = 0;
@@ -30,7 +30,7 @@ void laserSetUp(){
 }
 
 void laserButton(){
-  
+  /*
   buttonState = digitalRead(laserButtonPin);
 
   if (buttonState != laserPrev) {
@@ -39,6 +39,16 @@ void laserButton(){
       digitalWrite(laserPin, ledOn ? HIGH : LOW);
     }
     delay(50);
+  }
+  laserPrev = buttonState;*/
+    buttonState = digitalRead(laserButtonPin);
+
+  if (buttonState != laserPrev) {
+    if (buttonState == HIGH) { // If the button is pressed
+      ledOn = !ledOn; // Toggle the LED state
+      digitalWrite(laserPin, ledOn ? HIGH : LOW); // Turn the laser on or off based on ledOn state
+    }
+    delay(50); // Debounce the button
   }
   laserPrev = buttonState;
 }
