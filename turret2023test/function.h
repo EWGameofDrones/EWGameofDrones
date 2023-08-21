@@ -29,17 +29,17 @@ extern int direction;
 
 //all equipment functions
 void laserSetUp(); //sets up all the pins for laser + laser button
-void laserButton(); //runs the code for laser + button
+void laserButton(); //runs the code for laser + button, UNIMPLEMENTED. currently hardwired to turret
 
 void joystickDirection(); //gives you the direction of the joystick in direction variable
 void stepperSetUp(); //sets up steppers
-void moveOneRotation(); //moves two stepper motors one full rotation then reverses the rotation
-void moveStepper1(); //deals with x? axis
-void moveStepper2(); //deals with y? axis
+void moveOneRotation(); //a test function that moves two stepper motors one full rotation then reverses the rotation
+void moveStepper1(); //reads joystickDirection() to move on x/y axis
+void moveStepper2(); //reads joystickDirection() to move on x/y axis
 
-void reloadStepper();
-void reloadSetUp();
-void resetPos(); //resets position of turret when joystick button is pressed
+void reloadStepper(); //will move the reload stick foward with a press and back with another press
+void reloadSetUp(); //include this in loop()
+void resetPos(); //resets position of turret when joystick button is pressed (not working!!)
 
 //testing functions
 void testJoystick(); //tests direction of joystick (does not really account for corners)
@@ -51,7 +51,7 @@ void doEverything();//this is the loop of all the functions that will be run in 
 void setupTest();
 void loopTest();
 
-float degToSteps(float);
+float degToSteps(float); //converts degrees to steps
 
 //------------------------------------------------------------------------------------------------------
 
