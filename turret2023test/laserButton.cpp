@@ -6,6 +6,8 @@
 
 //------------------------------------------------------------------------------------
 
+//CURRETNYL UNUSED BUT WORKS ON A MOMENTARY BUTTON
+
 #include <Arduino.h>
 #include "function.h"
 
