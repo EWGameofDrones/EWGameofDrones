@@ -18,8 +18,8 @@ int degreePerRevolution = 5.625;
 
 AccelStepper stepper(AccelStepper::HALF4WIRE, motorPin1, motorPin3, motorPin2, motorPin4);
 
-// Degrees of the movement. First, five full rotations (360 degrees each), then back five times.
-int steps[] = {-200,200};
+// Degrees of movement
+int steps[] = {-200,200}; // foward + backwards
 int stepsCount = 2; // Total number of elements in the steps[] array
 
 bool forwardDirection = true;
