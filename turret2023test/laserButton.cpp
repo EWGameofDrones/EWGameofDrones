@@ -6,6 +6,8 @@
 
 //------------------------------------------------------------------------------------
 
+//CURRETNYL UNUSED BUT WORKS ON A MOMENTARY BUTTON
+
 #include <Arduino.h>
 #include "function.h"
 
@@ -41,7 +43,7 @@ void laserButton(){
     delay(50);
   }
   laserPrev = buttonState;*/
-    buttonState = digitalRead(laserButtonPin);
+  buttonState = digitalRead(laserButtonPin);
 
   if (buttonState != laserPrev) {
     if (buttonState == HIGH) { // If the button is pressed

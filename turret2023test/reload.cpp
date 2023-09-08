@@ -18,8 +18,8 @@ int degreePerRevolution = 5.625;
 
 AccelStepper stepper(AccelStepper::HALF4WIRE, motorPin1, motorPin3, motorPin2, motorPin4);
 
-// Degrees of the movement. First, five full rotations (360 degrees each), then back five times.
-int steps[] = {-155,155};
+// Degrees of movement
+int steps[] = {-200,200}; // foward + backwards
 int stepsCount = 2; // Total number of elements in the steps[] array
 
 bool forwardDirection = true;
@@ -40,20 +40,6 @@ void reloadSetUp() {
 int check = 0;
 
 void reloadStepper() {
-  /*
-  if(digitalRead(13) == HIGH){
-    if (!stepper.isRunning() && stepper.distanceToGo() == 0) {
-      stepper.moveTo(degToSteps(steps[stepsIndex]));
-      stepsIndex++;
-      if (stepsIndex >= stepsCount) {
-        stepsIndex = 0;
-      }
-    }
-  }
-  stepper.run();
-  */
-
-  
 
   if (digitalRead(13) == HIGH) {
     //check = 0;
@@ -97,43 +83,4 @@ void reloadStepper() {
     }
     isMoving = true;
   }
-  
-/*
-  if (digitalRead(13) == HIGH) {
-    // If the button is pressed, perform the state transition
-    if (!isMoving) {
-      // If currently in state start1, move to state forward
-      if (forwardDirection && stepsIndex == 0) {
-        forwardDirection = true;
-        stepsIndex = 1;
-      }
-      // If currently in state forward, move to state backward
-      else if (forwardDirection && stepsIndex == 1) {
-        forwardDirection = false;
-        stepsIndex = 1;
-      }
-      // If currently in state backward, move to state forward
-      else if (!forwardDirection && stepsIndex == 1) {
-        forwardDirection = true;
-        stepsIndex = 0;
-      }
-    }
-  }
-
-  // Perform the stepper movement if it's running
-  if (isMoving) {
-    stepper.run();
-    // Check if the movement is completed
-    if (!stepper.isRunning()) {
-      isMoving = false;
-    }
-  } else {
-    // Start the motor movement based on the current state
-    if (forwardDirection) {
-      stepper.moveTo(degToSteps(steps[stepsIndex]));
-    } else {
-      stepper.moveTo(degToSteps(-steps[stepsIndex]));
-    }
-    isMoving = true;
-  }*/
 }

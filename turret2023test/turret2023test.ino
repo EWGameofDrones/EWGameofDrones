@@ -12,14 +12,6 @@
 //#include <AccelStepper.h>
 //#include <Stepper.h>
 
-//#define ANALOG_IN A0
-//#define hello 3200
-
-//------------------------------------------------------------------------------------
-// Declaring all variables
-
-//they should all be declared in the function.h file
-
 //------------------------------------------------------------------------------------
 //template for switch states
 
@@ -60,6 +52,8 @@ int DIFFERENTNAMEHERE(int state){
 
 //------------------------------------------------------------------------------------
 
+// this is basic code to check if you stepper motors are step up correctly
+
 /*
 void setup() {               
   pinMode(8, OUTPUT); //8 = direction, 9 = step
@@ -78,13 +72,6 @@ void loop() {
 
 //------------------------------------------------------------------------------------
 
-//AccelStepper stepper(AccelStepper::DRIVER, motor1StepPin, motor1DirPin);
-
-const long xhigh = 180;
-const long xlow = 1;
-const long yhigh = 180;
-const long ylow = 2;
-
 void setup() {
 
   Serial.begin(9600);
@@ -101,7 +88,7 @@ void setup() {
 // will only call functions from other files and loop them continuously
 void loop() {
 
-
+ 
   laserButton(); //laserButton.cpp
 
   //this will loop and run the stepper motors based on joystick position
@@ -112,11 +99,15 @@ void loop() {
 
   reloadStepper(); //reload.cpp
 
+  //------------------------------------------
+
   //random testing functions
   //testLaserButton();
   //moveOneRotation();
   //moreTest();
   //testJoystick();
+
+  //------------------------------------------
  
 }
 
