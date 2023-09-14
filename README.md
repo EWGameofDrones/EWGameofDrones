@@ -1,4 +1,8 @@
-### Hi there 👋
+### Overview
+
+Included is the code and CAD files for the second turret
+
+Please enjoy your stay
 
 <!--
 **EWGameofDrones/EWGameofDrones** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
